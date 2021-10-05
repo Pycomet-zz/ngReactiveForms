@@ -1,0 +1,165 @@
+<form [formGroup]="projectForm" (ngSubmit)="updateForm()">
+  <div class="title-bar">
+    <h2>Section 1 - Company & Mentor Information</h2>
+    <hr />
+  </div>
+
+  <div class="card-container">
+    <div class="card">
+      <label for="name">Name</label>
+      <input class="card" id="name" type="text" formControlName="name" />
+    </div>
+  </div>
+
+  <div class="card-container">
+    <div class="card">
+      <label for="title">Title</label>
+      <input class="card" id="title" type="text" formControlName="title" />
+    </div>
+  </div>
+
+  <div class="card-container">
+    <div class="card">
+      <label for="email">Email</label>
+      <input class="card" id="email" type="email" formControlName="email" />
+    </div>
+  </div>
+
+  <div class="card-container">
+    <div class="card">
+      <label for="phone">Phone</label>
+      <input class="card" id="phone" type="text" formControlName="phone" />
+    </div>
+  </div>
+
+  <div class="card-container">
+    <div class="card">
+      <label for="orgName">Company Name</label>
+      <input class="card" id="orgName" type="text" formControlName="orgName" />
+    </div>
+  </div>
+
+  <h4 class="card text-left">Company Address</h4>
+
+  <div class="card-container address-form" formGroupName="orgAddress">
+    <div class="card">
+      <label for="street">Street</label>
+      <input class="card" id="street" type="text" formControlName="street" />
+    </div>
+
+    <div class="card">
+      <label for="zip">Zip</label>
+      <input class="card" id="zip" type="text" formControlName="zip" (change)="onZipChange()" />
+    </div>
+  </div>
+
+  <div class="card-container address-form" formGroupName="orgAddress">
+    <div class="card">
+      <label for="city">City</label>
+      <input class="card" id="city" type="text" formControlName="city" />
+    </div>
+
+    <div class="card">
+      <label for="state">State</label>
+      <input class="card" id="state" type="text" formControlName="state" />
+    </div>
+
+  </div>
+
+  <div class="card-container mb-3">
+    <div class="card">
+      <label for="orgWebsite">Company Website</label>
+      <input
+        class="card"
+        id="orgWebsite"
+        type="text"
+        formControlName="orgWebsite"
+      />
+    </div>
+  </div>
+
+  <hr />
+
+  <div class="title-bar">
+    <h2>Section 2 - Project For Which Students Will Participate</h2>
+    <hr />
+  </div>
+
+  <div class="card-container">
+    <div class="card">
+      <label for="projectTitle">Project Title</label>
+      <input
+        class="card"
+        id="projectTitle"
+        type="text"
+        formControlName="projectTitle"
+      />
+    </div>
+  </div>
+
+  <div class="card-container">
+    <div class="card">
+      <label for="projectDesc">Project Description</label>
+      <textarea
+        class="card"
+        id="projectDesc"
+        type="text"
+        formControlName="projectDesc"
+      ></textarea>
+    </div>
+  </div>
+
+  <div class="card-container">
+    <div class="card">
+      <label for="skillSet">Technical skills/requirements required</label>
+      <textarea
+        class="card"
+        id="skillSet"
+        type="text"
+        formControlName="skillSet"
+      ></textarea>
+    </div>
+  </div>
+
+  <div class="card-container">
+    <div class="card">
+      <label for="tasks">Duties of the Students required</label>
+      <textarea
+        class="card"
+        id="tasks"
+        type="text"
+        formControlName="tasks"
+      ></textarea>
+    </div>
+  </div>
+
+  <div class="card-container">
+    <div class="card">
+      <label for="benefits">What are the benefits of this project ?</label>
+      <textarea
+        class="card"
+        id="benefits"
+        type="text"
+        formControlName="benefits"
+      ></textarea>
+    </div>
+  </div>
+
+  <div class="card-container">
+    <div class="card">
+      <label for="projectServices"
+        >What will the company provide these students ?</label
+      >
+      <textarea
+        class="card"
+        id="projectServices"
+        type="text"
+        formControlName="projectServices"
+      ></textarea>
+    </div>
+  </div>
+
+  <div class="btn-submit">
+    <button type="submit" [disabled]="!projectForm.valid">Submit</button>
+  </div>
+</form>
